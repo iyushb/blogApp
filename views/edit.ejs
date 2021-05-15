@@ -1,0 +1,27 @@
+<%- include('partials/header.ejs') %>
+
+
+<div class="hero-container">
+    <div class="form_container">
+        <h1>Update Blog</h1>
+        <form class="ui form" method="POST" action="/blog/<%=blog._id%>?_method=PUT">
+            <div class="field">
+                <label>Blog Name</label>
+                <input type="text" name="blog_name" placeholder="Blog Title" value="<%=blog.name%>">
+            </div>
+            <div class="field">
+                <label>Image Url</label>
+                <input type="text" name="blog_img" placeholder="Image Url" value="<%=blog.image%>
+            </div>
+            <div class=" field">
+                <textarea name="blog_description" cols="20" rows="5"
+                    placeholder="description"><%=blog.description%></textarea>
+            </div>
+            <button class="ui button" type="submit">Submit</button>
+
+        </form>
+    </div>
+</div>
+
+
+<%- include('partials/footer.ejs') %>

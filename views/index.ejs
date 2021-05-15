@@ -1,0 +1,21 @@
+<%- include('partials/header.ejs')%>
+<div class="hero-container">
+    <%blog.forEach(function(blog){%>
+    <div class='center'>
+        <div class="blog-post">
+            <img src="<%= blog.image%>" alt="blog-image">
+            <h3><%= blog.name%></h3>
+            <p><%=blog.description%></p>
+            <span><%=blog.created%></span>
+            <a href="/blog/<%=blog._id%>" class="ui button">Read More</a>
+        </div>
+    </div>
+    <%});%>
+</div>
+
+<script>
+    $(".blog-post:odd").attr('data-aos', 'fade-right');
+    $('.blog-post:even').attr('data-aos', 'flip-left');
+</script>
+
+<%- include('partials/footer.ejs')%>

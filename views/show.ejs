@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs")%>
+<div class="hero-container center">
+
+    <div class="show-main-div">
+        <div class="show-img">
+            <img src="<%=reqBlog.image%>" alt="image">
+        </div>
+        <div class="show-name">
+            <h1><%=reqBlog.name%></h1>
+        </div>
+        <div class="show-description">
+            <p><%=reqBlog.description%></p>
+        </div>
+        <div class="show-btn">
+            <form action="/blog/<%=reqBlog._id%>/edit" method="get">
+                <button class="ui inverted orange button">EDIT</button>
+            </form>
+            <form action="/blog/<%=reqBlog._id%>/delete?_method=DELETE" method='POST'>
+                <button class=" ui inverted red button">DELETE</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<%- include("partials/footer.ejs")%>
